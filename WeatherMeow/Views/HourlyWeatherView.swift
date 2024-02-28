@@ -16,7 +16,7 @@ struct HourlyWeatherView: View {
                 ForEach(cityViewModel.weather.hourly) { weather in
                     let icon = cityViewModel.getWeatherIconFor(icon: weather.weather.count > 0 ? weather.weather[0].icon : "sun.max.fill")
                     let hour = cityViewModel.getTimeFor(timestamp: weather.dt)
-                    let temp = cityViewModel.getTempFor(temp: weather.temp)
+                    let temp = cityViewModel.getTempFor(temp: toCelsius(weather.temp))
                     
                     getHourlyView(hour: hour, image: icon, temp: temp)
                 }
@@ -29,7 +29,7 @@ struct HourlyWeatherView: View {
             Text(hour)
             image
                 .foregroundColor(.yellow)
-            Text(temp)
+            Text("\(temp)℃")
         }
         .foregroundColor(.white)
         .padding()

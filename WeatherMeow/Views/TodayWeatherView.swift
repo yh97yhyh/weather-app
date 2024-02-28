@@ -29,7 +29,7 @@ struct TodayWeatherView: View {
             
             HStack {
                 Spacer()
-                widgetView(image: "wind", color: .green, title: "\(cityViewModel.windSpeed)km/hr")
+                widgetView(image: "wind", color: .green, title: "\(cityViewModel.windSpeed)m/s")
                 Spacer()
                 widgetView(image: "drop.fill", color: .blue, title: "\(cityViewModel.humidity)")
                 Spacer()

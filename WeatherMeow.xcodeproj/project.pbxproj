@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4FBC6FC848C9948711E3A016 /* Pods_WeatherMeow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220C8C8B4112E8E2A436D951 /* Pods_WeatherMeow.framework */; };
+		F87426422B8F96BE005491E5 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F87426412B8F96BE005491E5 /* Secrets.xcconfig */; };
+		F87426462B8F978A005491E5 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87426452B8F978A005491E5 /* Util.swift */; };
 		F8899B172B8F1004008C90AD /* WeatherMeowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B162B8F1004008C90AD /* WeatherMeowApp.swift */; };
 		F8899B192B8F1004008C90AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B182B8F1004008C90AD /* ContentView.swift */; };
 		F8899B1B2B8F1005008C90AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8899B1A2B8F1005008C90AD /* Assets.xcassets */; };
@@ -52,6 +54,9 @@
 		1CFA449DE40297A190701DFB /* Pods-WeatherMeow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMeow.release.xcconfig"; path = "Target Support Files/Pods-WeatherMeow/Pods-WeatherMeow.release.xcconfig"; sourceTree = "<group>"; };
 		220C8C8B4112E8E2A436D951 /* Pods_WeatherMeow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherMeow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB6C8C5015E5EEE8F05E8AA1 /* Pods-WeatherMeow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMeow.debug.xcconfig"; path = "Target Support Files/Pods-WeatherMeow/Pods-WeatherMeow.debug.xcconfig"; sourceTree = "<group>"; };
+		F87426412B8F96BE005491E5 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Secrets.xcconfig; path = ../Secrets.xcconfig; sourceTree = "<group>"; };
+		F87426432B8F96E6005491E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F87426452B8F978A005491E5 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F8899B132B8F1004008C90AD /* WeatherMeow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMeow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8899B162B8F1004008C90AD /* WeatherMeowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMeowApp.swift; sourceTree = "<group>"; };
 		F8899B182B8F1004008C90AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +127,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F87426442B8F977D005491E5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F87426452B8F978A005491E5 /* Util.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		F8899B0A2B8F1004008C90AD = {
 			isa = PBXGroup;
 			children = (
@@ -143,14 +156,17 @@
 		F8899B152B8F1004008C90AD /* WeatherMeow */ = {
 			isa = PBXGroup;
 			children = (
+				F87426432B8F96E6005491E5 /* Info.plist */,
 				F8899B162B8F1004008C90AD /* WeatherMeowApp.swift */,
 				F8899B182B8F1004008C90AD /* ContentView.swift */,
 				F8899B262B8F101C008C90AD /* Views */,
 				F8899B252B8F1016008C90AD /* ViewModels */,
 				F8899B242B8F100F008C90AD /* Models */,
 				F8899B272B8F33C9008C90AD /* Network */,
+				F87426442B8F977D005491E5 /* Utils */,
 				F8899B292B8F3821008C90AD /* LottieAnimations */,
 				F8899B1A2B8F1005008C90AD /* Assets.xcassets */,
+				F87426412B8F96BE005491E5 /* Secrets.xcconfig */,
 				F8899B1C2B8F1005008C90AD /* Preview Content */,
 			);
 			path = WeatherMeow;
@@ -307,6 +323,7 @@
 				F8899B602B8F7BE9008C90AD /* nightShowerRains.json in Resources */,
 				F8899B5A2B8F7BDB008C90AD /* nightBrokenClouds.json in Resources */,
 				F8899B5E2B8F7BE4008C90AD /* nightRain.json in Resources */,
+				F87426422B8F96BE005491E5 /* Secrets.xcconfig in Resources */,
 				F8899B532B8F7BC7008C90AD /* dayFewClouds.json in Resources */,
 				F8899B622B8F7BED008C90AD /* nightThunderstorm.json in Resources */,
 				F8899B572B8F7BD3008C90AD /* dayShowerRains.json in Resources */,
@@ -377,6 +394,7 @@
 				F8899B2F2B8F3A7E008C90AD /* NetworkManager.swift in Sources */,
 				F8899B2B2B8F3863008C90AD /* API.swift in Sources */,
 				F8899B642B8F7C43008C90AD /* MenuHeaderView.swift in Sources */,
+				F87426462B8F978A005491E5 /* Util.swift in Sources */,
 				F8899B172B8F1004008C90AD /* WeatherMeowApp.swift in Sources */,
 				F8899B332B8F408E008C90AD /* Weather.swift in Sources */,
 				F8899B682B8F7E77008C90AD /* TodayWeatherView.swift in Sources */,
@@ -510,7 +528,7 @@
 		};
 		F8899B222B8F1005008C90AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB6C8C5015E5EEE8F05E8AA1 /* Pods-WeatherMeow.debug.xcconfig */;
+			baseConfigurationReference = F87426412B8F96BE005491E5 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -520,6 +538,7 @@
 				DEVELOPMENT_TEAM = 96KDP35MCD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherMeow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -550,6 +569,7 @@
 				DEVELOPMENT_TEAM = 96KDP35MCD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherMeow/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

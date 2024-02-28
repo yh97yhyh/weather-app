@@ -11,7 +11,13 @@ extension API {
     static let baseUrlString = "https://api.openweathermap.org/data/3.0/"
     
     static func getUrlFor(lat: Double, lon: Double) -> String {
-        return "\(baseUrlString)onecall?lat=\(lat)&lon=\(lon)&exclude=minutely&appid=\(key)&units=imperial"
+        let apiKey = (Bundle.main.apiKey != nil) ? Bundle.main.apiKey! : ""
+        return "\(baseUrlString)onecall?lat=\(lat)&lon=\(lon)&exclude=minutely&appid=\(apiKey)&units=imperial"
         
+    }
+}
+extension Bundle {
+    var apiKey: String? {
+        return infoDictionary?["API_KEY"] as? String
     }
 }

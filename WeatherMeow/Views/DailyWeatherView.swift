@@ -25,7 +25,7 @@ struct DailyWeatherView: View {
             
             Spacer()
             
-            Text("\(cityViewModel.getTempFor(temp: weather.temp.max)) | \(cityViewModel.getTempFor(temp: weather.temp.max))℃")
+            Text("\(cityViewModel.getTempFor(temp: toCelsius(weather.temp.min))) | \(cityViewModel.getTempFor(temp: toCelsius(weather.temp.max)))℃")
                 .frame(width: 150)
             
             Spacer()
