@@ -7,4 +7,5 @@ target 'WeatherMeow' do
 
   # Pods for WeatherMeow
   pod 'Alamofire'
+  pod 'lottie-ios'
 end
