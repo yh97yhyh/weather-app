@@ -15,6 +15,11 @@
 		F8899B2B2B8F3863008C90AD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B2A2B8F3863008C90AD /* API.swift */; };
 		F8899B2D2B8F38B7008C90AD /* API+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B2C2B8F38B7008C90AD /* API+Extensions.swift */; };
 		F8899B2F2B8F3A7E008C90AD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B2E2B8F3A7E008C90AD /* NetworkManager.swift */; };
+		F8899B312B8F4045008C90AD /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B302B8F4045008C90AD /* WeatherResponse.swift */; };
+		F8899B332B8F408E008C90AD /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B322B8F408E008C90AD /* Weather.swift */; };
+		F8899B362B8F40A0008C90AD /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B352B8F40A0008C90AD /* WeatherDetail.swift */; };
+		F8899B382B8F40AA008C90AD /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B372B8F40AA008C90AD /* DailyWeather.swift */; };
+		F8899B3A2B8F40C0008C90AD /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8899B392B8F40C0008C90AD /* Temperature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		F8899B2A2B8F3863008C90AD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F8899B2C2B8F38B7008C90AD /* API+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extensions.swift"; sourceTree = "<group>"; };
 		F8899B2E2B8F3A7E008C90AD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F8899B302B8F4045008C90AD /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		F8899B322B8F408E008C90AD /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		F8899B352B8F40A0008C90AD /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
+		F8899B372B8F40AA008C90AD /* DailyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
+		F8899B392B8F40C0008C90AD /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +91,10 @@
 		F8899B152B8F1004008C90AD /* WeatherMeow */ = {
 			isa = PBXGroup;
 			children = (
+				F8899B162B8F1004008C90AD /* WeatherMeowApp.swift */,
 				F8899B262B8F101C008C90AD /* Views */,
 				F8899B252B8F1016008C90AD /* ViewModels */,
 				F8899B242B8F100F008C90AD /* Models */,
-				F8899B162B8F1004008C90AD /* WeatherMeowApp.swift */,
 				F8899B272B8F33C9008C90AD /* Network */,
 				F8899B292B8F3821008C90AD /* LottieAnimations */,
 				F8899B1A2B8F1005008C90AD /* Assets.xcassets */,
@@ -104,6 +114,11 @@
 		F8899B242B8F100F008C90AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F8899B302B8F4045008C90AD /* WeatherResponse.swift */,
+				F8899B322B8F408E008C90AD /* Weather.swift */,
+				F8899B352B8F40A0008C90AD /* WeatherDetail.swift */,
+				F8899B372B8F40AA008C90AD /* DailyWeather.swift */,
+				F8899B392B8F40C0008C90AD /* Temperature.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,10 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8899B2D2B8F38B7008C90AD /* API+Extensions.swift in Sources */,
+				F8899B362B8F40A0008C90AD /* WeatherDetail.swift in Sources */,
+				F8899B312B8F4045008C90AD /* WeatherResponse.swift in Sources */,
 				F8899B192B8F1004008C90AD /* ContentView.swift in Sources */,
 				F8899B2F2B8F3A7E008C90AD /* NetworkManager.swift in Sources */,
 				F8899B2B2B8F3863008C90AD /* API.swift in Sources */,
 				F8899B172B8F1004008C90AD /* WeatherMeowApp.swift in Sources */,
+				F8899B332B8F408E008C90AD /* Weather.swift in Sources */,
+				F8899B3A2B8F40C0008C90AD /* Temperature.swift in Sources */,
+				F8899B382B8F40AA008C90AD /* DailyWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
