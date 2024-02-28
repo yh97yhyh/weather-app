@@ -71,7 +71,7 @@ final class CityViewViewModel: ObservableObject {
     }
     
     var rainChance: String {
-        return String(format: "$0.0f", weather.current.dew_point)
+        return String(format: "%0.0f%%", weather.current.dew_point)
     }
     
     func getTimeFor(timestamp: Int) -> String {
