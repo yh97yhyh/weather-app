@@ -8,16 +8,46 @@
 import SwiftUI
 
 struct CityWeatherView: View {
+    @ObservedObject var citiesViewModel = CitiesViewModel.shared
     @ObservedObject var cityViewModel = CityViewViewModel()
     @Binding var isFromSearch: Bool
+    @State private var isFavorite = false
     @State private var navigationToCitiesView = false
+    
+    init(cityViewModel: CityViewViewModel, isFromSearch: Binding<Bool>) {
+        self.cityViewModel = cityViewModel
+        self._isFromSearch = isFromSearch
+        _isFavorite = State(initialValue: CitiesViewModel.shared.cities.contains(cityViewModel.city))
+    }
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack(spacing: 0) {
                     ScrollView(showsIndicators: false) {
-                        CityView(cityViewModel: cityViewModel)
+                        ZStack {
+                            CityView(cityViewModel: cityViewModel)
+                            HStack {
+                                Spacer()
+                                VStack {
+                                    Button(action: {
+                                        isFavorite.toggle()
+                                        if isFavorite {
+                                            UserDefaultsManager.shared.addFavoriteCity(cityViewModel.city)
+                                        } else {
+                                            UserDefaultsManager.shared.removeFavoriteCity(cityViewModel.city)
+                                        }
+                                    }) {
+                                        Image(systemName: isFavorite ? "star.fill" : "star")
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal)
+                                    }
+                                    Spacer()
+                                }
+                            }
+                        }
                     }
                 }
                 .padding(.top, 30)
@@ -28,7 +58,7 @@ struct CityWeatherView: View {
                         HStack {
                             Spacer()
                             NavigationLink(
-                                destination: CitiesView( cityViewModel: cityViewModel)
+                                destination: CitiesView()
                                     .navigationBarBackButtonHidden(true),
                                 isActive: $navigationToCitiesView,
                                 label: {
@@ -38,7 +68,7 @@ struct CityWeatherView: View {
                                         .foregroundColor(.white)
                                         .padding()
                                 })
-                                .isDetailLink(false) // to avoid default navigation behavior
+                            .isDetailLink(false) // to avoid default navigation behavior
                         }
                     }
                 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CitiesView: View {
     @ObservedObject var citiesViewModel = CitiesViewModel.shared
-    @ObservedObject var cityViewModel: CityViewViewModel
     
     var body: some View {
         ZStack {
@@ -18,13 +17,21 @@ struct CitiesView: View {
                     MenuHeaderView()
                         .padding(.bottom)
                     
-                    ForEach(0..<5) { index in
+//                    ForEach(0..<5) { index in
+//                        NavigationLink(
+//                            destination: CityWeatherView(cityViewModel: CityViewViewModel(city: "Seoul"), isFromSearch: .constant(false))
+//                                .navigationBarBackButtonHidden(true)) {
+//                                    CityCardView(cityViewModel: CityViewViewModel())
+//                                        .padding(.bottom, 5)
+//                                }
+//                    }
+                    ForEach(citiesViewModel.cities, id: \.self) { city in
                         NavigationLink(
-                            destination: CityWeatherView(cityViewModel: CityViewViewModel(city: "Seoul"), isFromSearch: .constant(false))
-                            .navigationBarBackButtonHidden(true)) {
-                            CityCardView(cityViewModel: CityViewViewModel())
-                                .padding(.bottom, 5)
-                        }
+                            destination: CityWeatherView(cityViewModel: CityViewViewModel(city: city), isFromSearch: .constant(false))
+                                .navigationBarBackButtonHidden(true)) {
+                                    CityCardView(cityViewModel: CityViewViewModel(city: city))
+                                        .padding(.bottom, 5)
+                                }
                     }
                     .padding(.horizontal)
                 }
@@ -38,5 +45,5 @@ struct CitiesView: View {
 }
 
 #Preview {
-    CitiesView(citiesViewModel: CitiesViewModel(), cityViewModel: CityViewViewModel())
+    CitiesView(citiesViewModel: CitiesViewModel())
 }

@@ -14,7 +14,7 @@ class UserDefaultsManager {
     
     var favoriteCities: [String] {
             get {
-                return UserDefaults.standard.stringArray(forKey: favoritesKey) ?? []
+                return UserDefaults.standard.stringArray(forKey: favoritesKey) ?? ["Seoul"]
             }
             set {
                 UserDefaults.standard.set(newValue, forKey: favoritesKey)
