@@ -26,7 +26,7 @@
 ## Features to add
 
 - [ ]  Search Place
-- [ ]  Favorite Places
+- [x]  Favorite Places
 
 ---
 
@@ -34,3 +34,4 @@
 
 - Lottie ([https://github.com/airbnb/lottie-ios](https://github.com/airbnb/lottie-ios))
 - OpenWeather ([https://openweathermap.org/api/one-call-3](https://openweathermap.org/api/one-call-3))
+- Alamofire ([https://github.com/Alamofire/Alamofire](https://github.com/Alamofire/Alamofire))
