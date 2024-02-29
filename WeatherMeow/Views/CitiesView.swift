@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct CitiesView: View {
+    @ObservedObject var citiesViewModel = CitiesViewModel.shared
     @ObservedObject var cityViewModel: CityViewViewModel
     
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
                 ScrollView(showsIndicators: false) {
-                    MenuHeaderView(cityViewModel: cityViewModel)
+                    MenuHeaderView()
                         .padding(.bottom)
                     
                     ForEach(0..<5) { index in
-                        NavigationLink(destination: CityCardView(cityViewModel: CityViewViewModel())) {
+                        NavigationLink(
+                            destination: CityWeatherView(cityViewModel: CityViewViewModel(city: "Seoul"), isFromSearch: .constant(false))
+                            .navigationBarBackButtonHidden(true)) {
                             CityCardView(cityViewModel: CityViewViewModel())
-                                .padding(.bottom, 10)
+                                .padding(.bottom, 5)
                         }
                     }
                     .padding(.horizontal)
@@ -35,5 +38,5 @@ struct CitiesView: View {
 }
 
 #Preview {
-    CitiesView(cityViewModel: CityViewViewModel())
+    CitiesView(citiesViewModel: CitiesViewModel(), cityViewModel: CityViewViewModel())
 }

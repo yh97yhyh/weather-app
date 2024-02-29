@@ -28,7 +28,8 @@ struct CityWeatherView: View {
                         HStack {
                             Spacer()
                             NavigationLink(
-                                destination: CitiesView(cityViewModel: cityViewModel),
+                                destination: CitiesView( cityViewModel: cityViewModel)
+                                    .navigationBarBackButtonHidden(true),
                                 isActive: $navigationToCitiesView,
                                 label: {
                                     Image(systemName: "list.bullet.circle.fill")

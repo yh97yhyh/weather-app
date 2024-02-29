@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MenuHeaderView: View {
-    @ObservedObject var cityViewModel: CityViewViewModel
-    
-    @State private var searchTerm = "Seoul"
+    @ObservedObject var citiesViewModel = CitiesViewModel.shared
+    @State private var searchTerm = ""
+    @State private var isCityWeatherViewActive = false
     
     var body: some View {
         HStack {
@@ -19,13 +19,12 @@ struct MenuHeaderView: View {
                 .bold()
                 .padding(.leading, 20)
             
-            Button {
-                cityViewModel.city = searchTerm
-            } label: {
+            Button(action: {
+                isCityWeatherViewActive = true
+            }) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.blue)
-                    
                     Image(systemName: "location.fill")
                 }
             }
@@ -41,9 +40,12 @@ struct MenuHeaderView: View {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.blue.opacity(0.5))
         })
+        .sheet(isPresented: $isCityWeatherViewActive) {
+            CityWeatherView(cityViewModel: CityViewViewModel(city: searchTerm), isFromSearch: .constant(true))
+        }
     }
 }
 
 #Preview {
-    MenuHeaderView(cityViewModel: CityViewViewModel())
+    MenuHeaderView()
 }

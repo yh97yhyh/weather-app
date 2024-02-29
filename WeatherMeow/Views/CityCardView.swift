@@ -24,7 +24,7 @@ struct CityCardView: View {
                 
                 VStack(alignment: .leading) {
                     Text("\(cityViewModel.temperature)℃")
-                        .font(.system(size: 32))
+                        .font(.system(size: 22))
                     Text(cityViewModel.conditions)
                 }
             }

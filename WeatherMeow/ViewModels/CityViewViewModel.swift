@@ -12,7 +12,7 @@ import SwiftUI
 final class CityViewViewModel: ObservableObject {
     @Published var weather = WeatherResponse.empty()
     
-    @Published var city = "Seoul" {
+    @Published var city: String {
         didSet {
             getLocation()
         }
@@ -36,7 +36,8 @@ final class CityViewViewModel: ObservableObject {
         return formatter
     }()
     
-    init() {
+    init(city: String = "Seoul") {
+        self.city = city
         getLocation()
     }
     

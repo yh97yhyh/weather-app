@@ -18,6 +18,7 @@ class UserDefaultsManager {
             }
             set {
                 UserDefaults.standard.set(newValue, forKey: favoritesKey)
+                NotificationCenter.default.post(name: Notification.Name("FavoriteCitiesChanged"), object: nil)
             }
         }
     
