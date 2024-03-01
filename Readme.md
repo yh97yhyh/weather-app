@@ -25,7 +25,7 @@
 
 ## Features to add
 
-- [ ]  Search Place
+- [x]  Search Place
 - [x]  Favorite Places
 
 ---
