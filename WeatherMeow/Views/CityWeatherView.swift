@@ -27,9 +27,13 @@ struct CityWeatherView: View {
                 ScrollView(showsIndicators: false) {
                     ZStack {
                         if cityViewModel.isLoading {
-                            ProgressView("")
-                                .progressViewStyle(CircularProgressViewStyle())
-                                .foregroundColor(.white)
+                            GeometryReader { geometry in
+                                ProgressView("")
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .foregroundColor(.white)
+                                    .background(Color.clear)
+                                    .frame(width: geometry.size.width, height: nil)
+                            }
                         } else {
                             CityView(cityViewModel: cityViewModel)
                             HStack {
