@@ -1,6 +1,6 @@
 # WeatherApp
 
-> 2024.02.28 ~
+> 2024.03
 > 
 
 **Tech Spec**
@@ -10,9 +10,7 @@
 ---
 
 ## Screenshots
-
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/7f61b54e-d964-4521-aed2-8967947cfd96" width="45%" height="45%"/>
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/8cabbc84-df18-4a6d-adc9-05d6d5bc9ea3" width="45%" height="45%"/>
+[Youtube](https://youtu.be/g0vQR_Qn8fc?si=QlrDNIiBqsYgSFrB)
 
 ---
 
