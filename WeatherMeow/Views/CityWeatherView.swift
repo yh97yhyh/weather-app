@@ -12,7 +12,7 @@ struct CityWeatherView: View {
     @ObservedObject var cityViewModel = CityViewViewModel()
     @Binding var isFromSearch: Bool
     @State private var isFavorite = false
-    @State private var navigationToCitiesView = false
+    @Environment(\.dismiss) private var dismiss
     
     init(cityViewModel: CityViewViewModel, isFromSearch: Binding<Bool>) {
         self.cityViewModel = cityViewModel
@@ -21,11 +21,16 @@ struct CityWeatherView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                VStack(spacing: 0) {
-                    ScrollView(showsIndicators: false) {
-                        ZStack {
+        //        NavigationView {
+        ZStack {
+            VStack(spacing: 0) {
+                ScrollView(showsIndicators: false) {
+                    ZStack {
+                        if cityViewModel.isLoading {
+                            ProgressView("")
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .foregroundColor(.white)
+                        } else {
                             CityView(cityViewModel: cityViewModel)
                             HStack {
                                 Spacer()
@@ -50,34 +55,32 @@ struct CityWeatherView: View {
                         }
                     }
                 }
-                .padding(.top, 30)
-                
-                if !isFromSearch {
-                    VStack {
+            }
+            .padding(.top, 30)
+            
+            if !isFromSearch {
+                VStack {
+                    Spacer()
+                    HStack {
                         Spacer()
-                        HStack {
-                            Spacer()
-                            NavigationLink(
-                                destination: CitiesView()
-                                    .navigationBarBackButtonHidden(true),
-                                isActive: $navigationToCitiesView,
-                                label: {
-                                    Image(systemName: "list.bullet.circle.fill")
-                                        .resizable()
-                                        .frame(width: 40, height: 40)
-                                        .foregroundColor(.white)
-                                        .padding()
-                                })
-                            .isDetailLink(false) // to avoid default navigation behavior
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            Image(systemName: "list.bullet.circle.fill")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(.white)
+                                .padding()
                         }
                     }
                 }
             }
-            .background(
-                LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.6050806046, green: 0.8078469634, blue: 0.9820559621, alpha: 1)), Color(#colorLiteral(red: 0.4196078431, green: 0.5333333333, blue: 0.937254902, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing))
         }
-        .navigationBarHidden(true) // hide the navigation bar if needed
-        .navigationBarBackButtonHidden(true) // hide back button if needed
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.6050806046, green: 0.8078469634, blue: 0.9820559621, alpha: 1)), Color(#colorLiteral(red: 0.4196078431, green: 0.5333333333, blue: 0.937254902, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        //        }
+        //        .navigationBarHidden(true) // hide the navigation bar if needed
+        //        .navigationBarBackButtonHidden(true) // hide back button if needed
     }
 }
 

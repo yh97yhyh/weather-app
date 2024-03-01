@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var cityViewModel = CityViewViewModel()
+    @ObservedObject var citiesViewModel = CitiesViewModel.shared
+//    @ObservedObject var cityViewModel = CityViewViewModel()
     
     var body: some View {
         VStack {
-            CityWeatherView(cityViewModel: cityViewModel, isFromSearch: .constant(false))
+//            CityWeatherView(cityViewModel: cityViewModel, isFromSearch: .constant(false))
+            CitiesView(citiesViewModel: citiesViewModel)
         }
 //        ZStack {
 //            VStack(spacing: 0) {

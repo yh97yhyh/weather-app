@@ -12,7 +12,7 @@ extension API {
     
     static func getUrlFor(lat: Double, lon: Double) -> String {
         let apiKey = (Bundle.main.apiKey != nil) ? Bundle.main.apiKey! : ""
-        return "\(baseUrlString)onecall?lat=\(lat)&lon=\(lon)&exclude=minutely&appid=\(apiKey)&units=imperial"
+        return "\(baseUrlString)onecall?lat=\(lat)&lon=\(lon)&exclude=minutely&appid=\(key)&units=imperial"
         
     }
 }

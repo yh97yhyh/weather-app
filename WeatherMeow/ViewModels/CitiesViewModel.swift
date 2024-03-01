@@ -12,6 +12,8 @@ class CitiesViewModel: ObservableObject {
     
     @Published var cities: [String] = []
     
+//    @Published var isLoading = false
+    
     private var favoriteCitiesObserver: NSObjectProtocol?
     
     init() {

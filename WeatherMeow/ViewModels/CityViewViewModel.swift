@@ -18,6 +18,8 @@ final class CityViewViewModel: ObservableObject {
         }
     }
     
+    @Published var isLoading = false
+    
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
@@ -88,6 +90,8 @@ final class CityViewViewModel: ObservableObject {
     }
     
     func getLocation() {
+        if isLoading { return }
+        isLoading = true
         CLGeocoder().geocodeAddressString(city) { placemarks, error in
             if let places = placemarks, let place = places.first {
                 self.getWeather(coord: place.location?.coordinate)
@@ -112,10 +116,12 @@ final class CityViewViewModel: ObservableObject {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.weather = response
+                    self.isLoading = false
                 }
                 
             case .failure(let err):
                 print(err.localizedDescription)
+                self.isLoading = false
             }
         }
     }
