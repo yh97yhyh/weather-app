@@ -10,7 +10,12 @@
 ---
 
 ## Screenshots
-[Youtube](https://youtu.be/g0vQR_Qn8fc?si=QlrDNIiBqsYgSFrB)
+[Youtube](https://youtu.be/g0vQR_Qn8fc?si=QlrDNIiBqsYgSFrB) ▶️
+<br>
+<br>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/c020fd4b-0217-4c4c-adf2-c03c185930f0" width="33%" height="33%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/38b7b7ef-d589-4d46-bbe5-3732a0054a82" width="33%" height="33%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/aae9c8cf-20a4-42b7-8615-db879ffb1fa0" width="33%" height="33%"/>
 
 ---
 
